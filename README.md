@@ -1,2 +1,6 @@
 # LucioStore
-Not yet
+LUCIO STORE SIMULATOR
+.
+.
+.
+Now in development
