@@ -13,6 +13,10 @@ public class WristUI : MonoBehaviour
     {
         _wristUICanvas = GetComponent<Canvas>();
         _menu = inputActions.FindActionMap("XRI LeftHand").FindAction("Menu");
+        if (_menu == null )
+        {
+            Debug.Log("No hay un mapa de acciones");
+        }
         _menu.Enable();
         _menu.performed += ToggleMenu;
     }

@@ -447,7 +447,7 @@
                 {
                     "name": "Menu",
                     "type": "Button",
-                    "id": "a1e6b0d3-5e0b-48b4-9621-478a3b557258",
+                    "id": "9626bed4-5513-487e-b7a0-2a97ad058f93",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -688,8 +688,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ee59905a-3557-4e8a-b3c3-bf73612b7605",
-                    "path": "<XRController>{LeftHand}/{Menu}",
+                    "id": "f1dd476c-355e-45bb-bc48-430ed51be212",
+                    "path": "<XRController>{LeftHand}/menuButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
