@@ -447,7 +447,7 @@
                 {
                     "name": "Menu",
                     "type": "Button",
-                    "id": "9626bed4-5513-487e-b7a0-2a97ad058f93",
+                    "id": "65a2e0f1-4a3a-4135-b487-5ce9c76a230a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -688,8 +688,8 @@
                 },
                 {
                     "name": "",
-                    "id": "f1dd476c-355e-45bb-bc48-430ed51be212",
-                    "path": "<XRController>{LeftHand}/menuButton",
+                    "id": "75c52935-3ba9-440f-b60a-1793a6eb3c14",
+                    "path": "<OculusTouchController>{LeftHand}/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
