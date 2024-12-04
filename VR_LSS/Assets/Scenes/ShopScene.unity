@@ -222,7 +222,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47347537}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -233,7 +233,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -325,13 +325,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 151388710}
   - component: {fileID: 151388709}
   - component: {fileID: 151388708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 165223526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MueblesMostrador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 179655550}
   - component: {fileID: 179655549}
   - component: {fileID: 179655548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Borde (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 191049342}
   - component: {fileID: 191049341}
   - component: {fileID: 191049340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dulces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 235000104}
   - component: {fileID: 235000103}
   - component: {fileID: 235000102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 280952299}
   - component: {fileID: 280952298}
   - component: {fileID: 280952297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mueble 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 349003468}
   - component: {fileID: 349003467}
   - component: {fileID: 349003466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mueble (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2090,7 +2090,7 @@ GameObject:
   - component: {fileID: 415281731}
   - component: {fileID: 415281730}
   - component: {fileID: 415281729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel 2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2351,7 +2351,7 @@ GameObject:
   - component: {fileID: 433814297}
   - component: {fileID: 433814296}
   - component: {fileID: 433814295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dulces (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,6 +2679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: apple
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d93662e4cb3c7b84c8813fff8ba5b075, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2705,7 +2709,7 @@ GameObject:
   - component: {fileID: 488755050}
   - component: {fileID: 488755049}
   - component: {fileID: 488755048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2862,7 +2866,6 @@ Transform:
   - {fileID: 1156855825}
   - {fileID: 219720860}
   - {fileID: 1236240149}
-  - {fileID: 883001845}
   - {fileID: 739585222}
   - {fileID: 1475003480}
   - {fileID: 750313576}
@@ -3094,9 +3097,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7271449666460269675, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
       propertyPath: m_Name
       value: Cooler Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054865280442007790, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092708244707826562, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3172,9 +3195,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7271449666460269675, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
       propertyPath: m_Name
       value: Cooler Fridge (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054865280442007790, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092708244707826562, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3276,7 +3319,7 @@ GameObject:
   - component: {fileID: 579581704}
   - component: {fileID: 579581703}
   - component: {fileID: 579581702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3378,7 +3421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592267416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MostradorJugador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3428,7 +3471,7 @@ GameObject:
   - component: {fileID: 592746140}
   - component: {fileID: 592746139}
   - component: {fileID: 592746138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3589,6 +3632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LucioGame
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc33e7d40fd13c642a472c8451655c22, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3670,6 +3717,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3159791f98a21174f9d4ee72f1e774c7, type: 3}
       propertyPath: m_Name
       value: can
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3159791f98a21174f9d4ee72f1e774c7, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3784,7 +3835,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691682326}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -3795,7 +3846,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -3887,13 +3938,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -4033,7 +4084,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -4433,7 +4484,7 @@ GameObject:
   - component: {fileID: 735548218}
   - component: {fileID: 735548217}
   - component: {fileID: 735548216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4625,7 +4676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739585223}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -4636,7 +4687,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -4728,13 +4779,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -4996,7 +5047,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750313577}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -5007,7 +5058,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -5099,13 +5150,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -5613,7 +5664,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5646,7 +5697,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883001842}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -5657,7 +5708,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -5803,7 +5854,7 @@ GameObject:
   - component: {fileID: 885600878}
   - component: {fileID: 885600877}
   - component: {fileID: 885600876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6179,7 +6230,7 @@ GameObject:
   - component: {fileID: 948445511}
   - component: {fileID: 948445510}
   - component: {fileID: 948445509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mueble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6362,7 +6413,7 @@ GameObject:
   - component: {fileID: 970700330}
   - component: {fileID: 970700329}
   - component: {fileID: 970700328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6635,7 +6686,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009315889}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -6646,7 +6697,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -6738,13 +6789,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -6919,7 +6970,7 @@ GameObject:
   - component: {fileID: 1078406636}
   - component: {fileID: 1078406635}
   - component: {fileID: 1078406634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mueble (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7111,7 +7162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084082995}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -7122,7 +7173,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -7214,13 +7265,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -7401,7 +7452,7 @@ GameObject:
   - component: {fileID: 1098030996}
   - component: {fileID: 1098030995}
   - component: {fileID: 1098030994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel 2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7506,7 +7557,7 @@ GameObject:
   - component: {fileID: 1104772060}
   - component: {fileID: 1104772059}
   - component: {fileID: 1104772058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Refrigerador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7663,9 +7714,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7271449666460269675, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
       propertyPath: m_Name
       value: Cooler Fridge (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054865280442007790, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092708244707826562, guid: afe73d896e479c84c9b3093a0ee68786, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7910,7 +7981,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -8056,7 +8127,7 @@ GameObject:
   - component: {fileID: 1174243226}
   - component: {fileID: 1174243225}
   - component: {fileID: 1174243224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8161,7 +8232,7 @@ GameObject:
   - component: {fileID: 1178390382}
   - component: {fileID: 1178390381}
   - component: {fileID: 1178390380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8360,7 +8431,7 @@ GameObject:
   - component: {fileID: 1184308617}
   - component: {fileID: 1184308616}
   - component: {fileID: 1184308615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8543,7 +8614,7 @@ GameObject:
   - component: {fileID: 1214597704}
   - component: {fileID: 1214597703}
   - component: {fileID: 1214597702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8868,7 +8939,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -9011,7 +9082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1262501711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muebles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9134,7 +9205,7 @@ GameObject:
   - component: {fileID: 1275128595}
   - component: {fileID: 1275128594}
   - component: {fileID: 1275128593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dulces (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9239,7 +9310,7 @@ GameObject:
   - component: {fileID: 1320548801}
   - component: {fileID: 1320548800}
   - component: {fileID: 1320548799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel 2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9344,7 +9415,7 @@ GameObject:
   - component: {fileID: 1335800397}
   - component: {fileID: 1335800396}
   - component: {fileID: 1335800395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9449,7 +9520,7 @@ GameObject:
   - component: {fileID: 1364909410}
   - component: {fileID: 1364909409}
   - component: {fileID: 1364909408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10112,7 +10183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475003481}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -10123,7 +10194,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -10215,13 +10286,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -10312,47 +10383,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 515930601}
+    m_TransformParent: {fileID: 1713058102}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4000001
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3333335
+      value: 33.33334
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.26666677
+      value: 26.66667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1821756
+      value: -29.32556
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08994713
+      value: -3.6669984
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.09375797
+      value: 10.105291
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.045125186
+      value: -0.031908322
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000018626451
+      value: 0.031908326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.70638657
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.99898136
+      value: -0.70638645
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10373,6 +10444,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
       propertyPath: m_Name
       value: Gomi
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2082e3c7b1dcb134f9820bfbeceed812, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10848,7 +10923,7 @@ GameObject:
   - component: {fileID: 1615430675}
   - component: {fileID: 1615430674}
   - component: {fileID: 1615430673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mueble (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11048,6 +11123,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 883001845}
   - {fileID: 1793966798}
   - {fileID: 2144351404}
   - {fileID: 1254625663}
@@ -11279,6 +11355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fries
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c5a539d82d08734faae3881ce1a0272, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11461,7 +11541,7 @@ GameObject:
   - component: {fileID: 1765596022}
   - component: {fileID: 1765596021}
   - component: {fileID: 1765596020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11709,7 +11789,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -11855,7 +11935,7 @@ GameObject:
   - component: {fileID: 1801582993}
   - component: {fileID: 1801582992}
   - component: {fileID: 1801582991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Microondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11960,7 +12040,7 @@ GameObject:
   - component: {fileID: 1805874310}
   - component: {fileID: 1805874309}
   - component: {fileID: 1805874308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anaquel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12062,7 +12142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1807009995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EstanteDulces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12099,7 +12179,7 @@ GameObject:
   - component: {fileID: 1809012263}
   - component: {fileID: 1809012262}
   - component: {fileID: 1809012261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12282,7 +12362,7 @@ GameObject:
   - component: {fileID: 1846231857}
   - component: {fileID: 1846231856}
   - component: {fileID: 1846231859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12387,7 +12467,7 @@ GameObject:
   - component: {fileID: 1846966217}
   - component: {fileID: 1846966216}
   - component: {fileID: 1846966215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12492,7 +12572,7 @@ GameObject:
   - component: {fileID: 1849403015}
   - component: {fileID: 1849403014}
   - component: {fileID: 1849403013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Borde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12753,7 +12833,7 @@ GameObject:
   - component: {fileID: 1945873638}
   - component: {fileID: 1945873637}
   - component: {fileID: 1945873636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mueble (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13457,7 +13537,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062565019}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -13468,7 +13548,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -13560,13 +13640,13 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
@@ -13663,7 +13743,7 @@ GameObject:
   - component: {fileID: 2081041989}
   - component: {fileID: 2081041988}
   - component: {fileID: 2081041987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13924,7 +14004,7 @@ GameObject:
   - component: {fileID: 2131937944}
   - component: {fileID: 2131937943}
   - component: {fileID: 2131937942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mostrador 2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14251,7 +14331,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -14462,14 +14542,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 444267866}
-    - target: {fileID: 4965114637136682448, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4965114637136682448, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5138198481951316098, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -14478,18 +14550,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 444267866}
-    - target: {fileID: 7926038748245941822, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926038748245941822, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926038748245941822, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7926038748245941822, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -14528,10 +14588,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926038748245941822, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926038748245941822, guid: e3961e589196cc9499659b5dc33c9b47, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
