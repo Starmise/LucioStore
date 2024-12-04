@@ -36,6 +36,11 @@ public class CustomerSpawner : MonoBehaviour
 
         // Crear cliente y añadirlo a la fila
         GameObject newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
+        CustomerBehavior customerBehavior = newCustomer.GetComponent<CustomerBehavior>();
+
+        // Asignar la referencia al CustomerSpawner
+        customerBehavior.SetCustomerSpawner(this);
+
         customerQueue.Enqueue(newCustomer);
 
         // Si la fila supera el tamaño máximo, eliminar el cliente más antiguo
@@ -43,6 +48,32 @@ public class CustomerSpawner : MonoBehaviour
         {
             GameObject oldCustomer = customerQueue.Dequeue();
             Destroy(oldCustomer);
+            // Llamamos a MoveCustomersForward para que los clientes restantes se muevan a la posición correcta
+            MoveCustomersForward();
+        }
+    }
+
+    // Método llamado cuando un cliente ha sido destruido
+    public void OnCustomerDestroyed()
+    {
+        // Mover a los clientes restantes en la cola hacia adelante
+        MoveCustomersForward();
+    }
+
+    // Mover los clientes restantes hacia adelante
+    private void MoveCustomersForward()
+    {
+        // Solo mover clientes si hay al menos uno
+        if (customerQueue.Count == 0) return;
+
+        // Recorre la cola y mueve los clientes hacia la posición del anterior
+        for (int i = 0; i < customerQueue.Count; i++)
+        {
+            GameObject customer = customerQueue.ToArray()[i];
+            Vector3 targetPosition = spawnPoint.position + queueOffset * i; // Nueva posición para el cliente
+
+            // Mueve el cliente suavemente a la nueva posición
+            customer.transform.position = Vector3.MoveTowards(customer.transform.position, targetPosition, Time.deltaTime * 2);
         }
     }
 }
