@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 127775757062458788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5236707, y: 6.1, z: 4.2873616}
+  m_LocalPosition: {x: 7.5236707, y: 6.1, z: 4.131}
   m_LocalScale: {x: 1, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -103,7 +103,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIcons:
-  - {fileID: 3283281311748124114, guid: 1914156b9660d1f46b3ab1ac21f7e7c6, type: 3}
+  - {fileID: 5764632159043201464, guid: f5e79353acc509440bd2127ac8e732e8, type: 3}
   iconPosition: {fileID: 5663082704102848329}
   receivePoint: {fileID: 3056898840239504503}
   currentMoney: 0
@@ -142,7 +142,6 @@ GameObject:
   - component: {fileID: 4636140753097329801}
   - component: {fileID: 3281641058488750018}
   - component: {fileID: 1451627723300012528}
-  - component: {fileID: 5891786354939469980}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -215,27 +214,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5891786354939469980
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4719273260173105854}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.6
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5976682645710116025
 GameObject:
   m_ObjectHideFlags: 0
