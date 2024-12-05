@@ -9,7 +9,7 @@ public class Pellet : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Implementar lógica de daño aquí
-        Debug.Log("Hit: " + collision.gameObject.name);
+        // Debug.Log("Hit: " + collision.gameObject.name);
         // Ejemplo: si el objeto tiene un componente de salud, reducir su salud
         // var health = collision.gameObject.GetComponent<Health>();
         // if (health != null)
