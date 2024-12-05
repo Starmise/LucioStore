@@ -2793,6 +2793,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 583198223}
+    - target: {fileID: 8776852218078854419, guid: 41255e3fd742399499320369333ab0e5, type: 3}
+      propertyPath: thiefPrefab
+      value: 
+      objectReference: {fileID: 127775757062458788, guid: 0bd171dde278e1843ab0e50b7ef27415, type: 3}
     - target: {fileID: 9211427356892600927, guid: 41255e3fd742399499320369333ab0e5, type: 3}
       propertyPath: m_Name
       value: CustomerSpawner

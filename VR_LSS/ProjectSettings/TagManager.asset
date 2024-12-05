@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shotgun
   - Thief
+  - Pellet
   layers:
   - Default
   - TransparentFX

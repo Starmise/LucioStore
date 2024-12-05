@@ -132,14 +132,7 @@ public class CustomerBehavior : MonoBehaviour
 
     private void HandleThiefBehavior()
     {
-        Debug.Log("¡El ladrón Hec nos ha toqueteado");
-        // Lógica especial para el ladrón
-        // Perder todo el dinero ???
-        // No se
-
-        // Notificar al spawner y destruir el ladrón
-        customerSpawner.OnCustomerDestroyed(this);
-        Destroy(gameObject);
+        Debug.Log("¡El ladrón ha aparecido!");
 
         // El ladrón no pide objetos, pero muestra un ícono especial
         Quaternion spawnRotation = Quaternion.Euler(0, -90, 0);
@@ -148,6 +141,50 @@ public class CustomerBehavior : MonoBehaviour
         currentIcon = Instantiate(itemIcons[itemIcons.Length - 1], iconPosition.position, spawnRotation);
         currentIcon.transform.SetParent(transform);
 
-        return;
+        // Iniciar el temporizador de 10 segundos
+        StartCoroutine(ThiefTimer());
+    }
+
+    private IEnumerator ThiefTimer()
+    {
+        Debug.Log("El ladrón tiene 10 segundos para ser eliminado...");
+        yield return new WaitForSeconds(10);
+
+        // Si el ladrón no fue eliminado en ese tiempo
+        if (!isSatisfied)
+        {
+            Debug.Log("¡El ladrón robó todo el dinero!");
+
+            // Resetear el dinero del jugador
+            currentMoney = 0;
+            PlayerPrefs.SetInt("PlayerMoney", currentMoney);
+            OnMoneyChanged.Invoke(currentMoney);
+
+            // Destruir el ladrón
+            Destroy(gameObject);
+        }
+    }
+
+    // Detectar colisiones con balas
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isThief && collision.gameObject.CompareTag("Pellet"))
+        {
+            Debug.Log("¡Ladrón eliminado por disparo!");
+
+            // Incrementar el dinero del jugador
+            currentMoney += 50;
+            PlayerPrefs.SetInt("PlayerMoney", currentMoney);
+            OnMoneyChanged.Invoke(currentMoney);
+
+            Debug.Log("Recompensa recibida: +50. Dinero actual: " + currentMoney);
+
+            // Destruir el ladrón
+            customerSpawner.OnCustomerDestroyed(this);
+            Destroy(gameObject);
+
+            // Destruir la bala después del impacto
+            Destroy(collision.gameObject);
+        }
     }
 }
