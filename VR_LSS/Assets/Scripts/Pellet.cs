@@ -17,6 +17,12 @@ public class Pellet : MonoBehaviour
         //     health.TakeDamage(damage);
         // }
 
+        if (collision.gameObject.CompareTag("Shotgun"))
+        {
+            // Ignora la colisión con el objeto etiquetado como "shotgun"
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+
         Destroy(gameObject); // Destruye el proyectil al impactar
     }
 }
