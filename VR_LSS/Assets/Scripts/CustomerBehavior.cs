@@ -20,9 +20,21 @@ public class CustomerBehavior : MonoBehaviour
     // Evento que notifica cambios en el dinero
     public UnityEvent<int> OnMoneyChanged;
 
+    private bool isThief = false; // Indica si este cliente es un ladrón
+
     void Start()
     {
-        RequestItem();
+        // Verificar si este cliente es un ladrón basado en su tag
+        if (CompareTag("Thief"))
+        {
+            isThief = true;
+            Debug.Log("¡Ladrón detectado!");
+            HandleThiefBehavior(); // Lógica especial para el ladrón
+        }
+        else
+        {
+            RequestItem();
+        }
 
         // Inicializar el evento si es nulo
         if (OnMoneyChanged == null)
@@ -116,5 +128,26 @@ public class CustomerBehavior : MonoBehaviour
     public int GetCurrentMoney()
     {
         return currentMoney;
+    }
+
+    private void HandleThiefBehavior()
+    {
+        Debug.Log("¡El ladrón Hec nos ha toqueteado");
+        // Lógica especial para el ladrón
+        // Perder todo el dinero ???
+        // No se
+
+        // Notificar al spawner y destruir el ladrón
+        customerSpawner.OnCustomerDestroyed(this);
+        Destroy(gameObject);
+
+        // El ladrón no pide objetos, pero muestra un ícono especial
+        Quaternion spawnRotation = Quaternion.Euler(0, -90, 0);
+
+        // Asignar un ícono especial para el ladrón (DEBE SER EL ÚLTIMO OBJETO EN itemIcons)
+        currentIcon = Instantiate(itemIcons[itemIcons.Length - 1], iconPosition.position, spawnRotation);
+        currentIcon.transform.SetParent(transform);
+
+        return;
     }
 }

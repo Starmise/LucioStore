@@ -11,6 +11,9 @@ public class CustomerSpawner : MonoBehaviour
     public int maxQueueSize = 3; // Máximo número de clientes en la fila
     public Vector3 queueOffset = new Vector3(0, 0, 2f); // Distancia entre los clientes en la fila
 
+    public GameObject thiefPrefab;
+    [SerializeField] private float thiefProbability = 0.05f; // Probabilidad del 5%
+
     private Queue<GameObject> customerQueue = new Queue<GameObject>();
 
     void Start()
@@ -35,8 +38,19 @@ public class CustomerSpawner : MonoBehaviour
         // Calcular posición del nuevo cliente
         Vector3 spawnPosition = spawnPoint.position + queueOffset * customerQueue.Count;
 
-        // Crear cliente y añadirlo a la fila
-        GameObject newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
+        // Determinar si se debe instanciar un Thief en lugar de un cliente normal
+        GameObject newCustomer;
+        if (Random.value <= thiefProbability)
+        {
+            newCustomer = Instantiate(thiefPrefab, spawnPosition, Quaternion.identity);
+            //Debug.Log("Thief instanciado!");
+        }
+        else
+        {
+            newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
+            //Debug.Log("Cliente normal llamado.");
+        }
+
         CustomerBehavior customerBehavior = newCustomer.GetComponent<CustomerBehavior>();
 
         // Asignar la referencia al CustomerSpawner
