@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomerSpawner : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] private float thiefProbability = 0.05f; // Probabilidad del 5%
 
     private Queue<GameObject> customerQueue = new Queue<GameObject>();
+    private int totalCustomersSpawned = 0;
+    [SerializeField] private int maxTotalCustomers = 12; 
 
     void Start()
     {
@@ -29,6 +32,15 @@ public class CustomerSpawner : MonoBehaviour
             {
                 SpawnCustomer();
             }
+
+            // Hay que checar si ya se llegó al lmite LUCIOOOO
+            if (totalCustomersSpawned >= maxTotalCustomers)
+            {
+                Debug.Log("Se alcanzó el límite de clientes. Cargando la escena FinalScene...");
+                SceneManager.LoadScene("Final Scene");
+                yield break; // Detener la corrutina
+            }
+
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -57,6 +69,7 @@ public class CustomerSpawner : MonoBehaviour
         customerBehavior.SetCustomerSpawner(this);
 
         customerQueue.Enqueue(newCustomer);
+        totalCustomersSpawned++;
 
         // Si la fila supera el tamaño máximo, eliminar el cliente más antiguo
         if (customerQueue.Count > maxQueueSize)

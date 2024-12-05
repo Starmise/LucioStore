@@ -22,6 +22,9 @@ public class CustomerBehavior : MonoBehaviour
 
     private bool isThief = false; // Indica si este cliente es un ladrón
 
+    public static System.Action<CustomerBehavior> OnCustomerSpawned;
+    public static System.Action<string> OnThiefAlert;
+
     void Start()
     {
         // Verificar si este cliente es un ladrón basado en su tag
@@ -29,6 +32,7 @@ public class CustomerBehavior : MonoBehaviour
         {
             isThief = true;
             Debug.Log("¡Ladrón detectado!");
+            OnThiefAlert?.Invoke("¡Cuidado! Un ladrón apareció en la escena.");
             HandleThiefBehavior(); // Lógica especial para el ladrón
         }
         else
@@ -41,6 +45,9 @@ public class CustomerBehavior : MonoBehaviour
         {
             OnMoneyChanged = new UnityEvent<int>();
         }
+
+        // Notificar que esta instancia está lista
+        OnCustomerSpawned?.Invoke(this);
 
         // Cargar el dinero almacenado en PlayerPrefs
         currentMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
@@ -85,8 +92,8 @@ public class CustomerBehavior : MonoBehaviour
                 Debug.Log("¡Objeto correcto recibido!");
                 isSatisfied = true;
 
-                // Incrementar dinero y guardar en PlayerPrefs
-                currentMoney += 25;
+                int savedMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+                currentMoney = savedMoney + 25;
                 PlayerPrefs.SetInt("PlayerMoney", currentMoney);
                 Debug.Log("Dinero actual: " + currentMoney);
 
@@ -102,25 +109,22 @@ public class CustomerBehavior : MonoBehaviour
 
                 // Notificar al spawner de que este cliente ha recibido su orden
                 customerSpawner.OnCustomerDestroyed(this);
-
-                // Destruir el cliente
-                Destroy(gameObject);
             }
             else
             {
                 Debug.Log("¡Objeto incorrecto!");
 
-                // Reducir dinero y guardar en PlayerPrefs
-                currentMoney -= 11; // 11 pesos porque es a lo que sale el qrobus
+                int savedMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+                currentMoney = savedMoney - 11;// 11 pesos porque es a lo que sale el qrobus
                 PlayerPrefs.SetInt("PlayerMoney", currentMoney);
                 Debug.Log("Dinero actual: " + currentMoney);
 
                 other.GetComponent<Collider>().enabled = false;
                 other.GetComponent<DraggableItem>().enabled = false;
             }
-
-            // Notificar cambios en el dinero
             OnMoneyChanged.Invoke(currentMoney);
+
+            Destroy(gameObject);
         }
     }
 
@@ -158,7 +162,9 @@ public class CustomerBehavior : MonoBehaviour
             // Resetear el dinero del jugador
             currentMoney = 0;
             PlayerPrefs.SetInt("PlayerMoney", currentMoney);
+            PlayerPrefs.Save();
             OnMoneyChanged.Invoke(currentMoney);
+            OnThiefAlert?.Invoke("¡El ladrón se robó todo el dinero!");
 
             // Destruir el ladrón
             Destroy(gameObject);
@@ -172,19 +178,18 @@ public class CustomerBehavior : MonoBehaviour
         {
             Debug.Log("¡Ladrón eliminado por disparo!");
 
-            // Incrementar el dinero del jugador
-            currentMoney += 50;
+            int savedMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+            currentMoney = savedMoney + 50;
             PlayerPrefs.SetInt("PlayerMoney", currentMoney);
+            PlayerPrefs.Save();
             OnMoneyChanged.Invoke(currentMoney);
 
             Debug.Log("Recompensa recibida: +50. Dinero actual: " + currentMoney);
+            OnThiefAlert?.Invoke("¡Ladrón smasheado con éxito!");
 
             // Destruir el ladrón
             customerSpawner.OnCustomerDestroyed(this);
             Destroy(gameObject);
-
-            // Destruir la bala después del impacto
-            Destroy(collision.gameObject);
         }
     }
 }
