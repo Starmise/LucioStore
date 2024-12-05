@@ -161,6 +161,10 @@ MonoBehaviour:
   - {fileID: 3283281311748124114, guid: 6128739ab780fce4e90b48956eb4481e, type: 3}
   iconPosition: {fileID: 5469595983963033213}
   receivePoint: {fileID: 7367777949217982302}
+  currentMoney: 0
+  OnMoneyChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7091306941651634878
 GameObject:
   m_ObjectHideFlags: 0

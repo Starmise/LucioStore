@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ResultScreen : MonoBehaviour
 {
@@ -10,13 +11,13 @@ public class ResultScreen : MonoBehaviour
     void Start()
     {
         // Obtener el dinero guardado en PlayerPrefs y mostrarlo
-        int finalMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+        int finalMoney = PlayerPrefs.GetInt("PlayerMoney");
         moneyText.text = "Dinero Final: " + finalMoney;
     }
 
     // Método para regresar al menú principal
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu"); // Cambia "MainMenu" por el nombre de tu escena de menú principal
+        SceneManager.LoadScene("ShopScene"); // Cambia "MainMenu" por el nombre de tu escena de menú principal
     }
 }
