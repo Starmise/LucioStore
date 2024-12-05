@@ -37,7 +37,8 @@ public class WristUI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No está el script del dinero!");
+            moneyTxt.text = "Money: " + PlayerPrefs.GetInt("PlayerMoney");
+            // Debug.LogError("No está el script del dinero!");
         }
     }
 
