@@ -24,8 +24,10 @@ public class CustomerBehavior : MonoBehaviour
         // Seleccionar un ítem aleatorio
         requestedItemIndex = Random.Range(0, itemIcons.Length);
 
+        Quaternion spawnRotation = Quaternion.Euler(0, -90, 0);
+
         // Instanciar el ícono del pedido junto al cliente
-        currentIcon = Instantiate(itemIcons[requestedItemIndex], iconPosition.position, Quaternion.identity);
+        currentIcon = Instantiate(itemIcons[requestedItemIndex], iconPosition.position, spawnRotation);
 
         // Hacer que el ícono sea hijo del cliente para que se mueva con él
         currentIcon.transform.SetParent(transform);
@@ -66,7 +68,7 @@ public class CustomerBehavior : MonoBehaviour
                 other.GetComponent<DraggableItem>().enabled = false;
 
                 // Notificar al spawner de que este cliente ha recibido su orden
-                customerSpawner.OnCustomerDestroyed();
+                customerSpawner.OnCustomerDestroyed(this);
 
                 // Destruir el cliente
                 Destroy(gameObject);
