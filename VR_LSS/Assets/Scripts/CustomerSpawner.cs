@@ -85,15 +85,5 @@ public class CustomerSpawner : MonoBehaviour
         }
 
         customerQueue = new Queue<GameObject>(customerVerify);
-
-        // Recorre la cola y mueve los clientes hacia la posición del anterior
-        //for (int i = 0; i < customerQueue.Count; i++)
-        //{
-        //    GameObject customer = customerQueue.ToArray()[i];
-        //    Vector3 targetPosition = spawnPoint.position + queueOffset * i; // Nueva posición para el cliente
-
-        //    // Mueve el cliente suavemente a la nueva posición
-        //    customer.transform.position = Vector3.MoveTowards(customer.transform.position, targetPosition, Time.deltaTime * 2);
-        //}
     }
 }
