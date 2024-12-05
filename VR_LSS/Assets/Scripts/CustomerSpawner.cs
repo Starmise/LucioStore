@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CustomerSpawner : MonoBehaviour
@@ -54,8 +55,13 @@ public class CustomerSpawner : MonoBehaviour
     }
 
     // Método llamado cuando un cliente ha sido destruido
-    public void OnCustomerDestroyed()
+    public void OnCustomerDestroyed(CustomerBehavior customer)
     {
+        // Filtrar la cola para remover el cliente destruido
+        customerQueue = new Queue<GameObject>(
+            customerQueue.Where(c => c != null && c != customer.gameObject)
+        );
+
         // Mover a los clientes restantes en la cola hacia adelante
         MoveCustomersForward();
     }
@@ -66,14 +72,28 @@ public class CustomerSpawner : MonoBehaviour
         // Solo mover clientes si hay al menos uno
         if (customerQueue.Count == 0) return;
 
-        // Recorre la cola y mueve los clientes hacia la posición del anterior
-        for (int i = 0; i < customerQueue.Count; i++)
-        {
-            GameObject customer = customerQueue.ToArray()[i];
-            Vector3 targetPosition = spawnPoint.position + queueOffset * i; // Nueva posición para el cliente
+        List<GameObject> customerVerify = new List<GameObject>();
 
+        int idCustomers = 0;
+        foreach (GameObject customer in customerQueue)
+        {
+            Vector3 targetPosition = spawnPoint.position + queueOffset * idCustomers; // Nueva posición para el cliente
             // Mueve el cliente suavemente a la nueva posición
             customer.transform.position = Vector3.MoveTowards(customer.transform.position, targetPosition, Time.deltaTime * 2);
+            customerVerify.Add(customer);
+            idCustomers++;
         }
+
+        customerQueue = new Queue<GameObject>(customerVerify);
+
+        // Recorre la cola y mueve los clientes hacia la posición del anterior
+        //for (int i = 0; i < customerQueue.Count; i++)
+        //{
+        //    GameObject customer = customerQueue.ToArray()[i];
+        //    Vector3 targetPosition = spawnPoint.position + queueOffset * i; // Nueva posición para el cliente
+
+        //    // Mueve el cliente suavemente a la nueva posición
+        //    customer.transform.position = Vector3.MoveTowards(customer.transform.position, targetPosition, Time.deltaTime * 2);
+        //}
     }
 }
