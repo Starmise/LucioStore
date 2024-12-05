@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CustomerBehavior : MonoBehaviour
@@ -14,9 +15,19 @@ public class CustomerBehavior : MonoBehaviour
     private int requestedItemIndex; // Índice del ítem solicitado
     private bool isSatisfied = false; // Estado del cliente
 
+    [SerializeField] private int currentMoney = 0;
+
+    // Evento que notifica cambios en el dinero
+    public UnityEvent<int> OnMoneyChanged;
+
     void Start()
     {
         RequestItem();
+
+        if (OnMoneyChanged == null)
+        {
+            OnMoneyChanged = new UnityEvent<int>();
+        }
     }
 
     private void RequestItem()
@@ -57,6 +68,9 @@ public class CustomerBehavior : MonoBehaviour
                 Debug.Log("¡Objeto correcto recibido!");
                 isSatisfied = true;
 
+                currentMoney += 25;
+                Debug.Log("Dinero actual: " + currentMoney);
+
                 // Mover el objeto al punto de recepción del cliente
                 other.transform.position = receivePoint.position;
 
@@ -76,7 +90,20 @@ public class CustomerBehavior : MonoBehaviour
             else
             {
                 Debug.Log("¡Objeto incorrecto!");
+                currentMoney -= 11; // 11 pesos porque es a lo que sale el qrobus
+                Debug.Log("Dinero actual: " + currentMoney);
+
+
+                other.GetComponent<Collider>().enabled = false;
+                other.GetComponent<DraggableItem>().enabled = false;
             }
+            OnMoneyChanged.Invoke(currentMoney);
         }
+    }
+
+    // Como vimos en POO, si una variable es privada, para acceder a ella se usa un getter
+    public int GetCurrentMoney()
+    {
+        return currentMoney;
     }
 }
