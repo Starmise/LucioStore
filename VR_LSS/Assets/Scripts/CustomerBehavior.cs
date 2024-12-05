@@ -24,10 +24,15 @@ public class CustomerBehavior : MonoBehaviour
     {
         RequestItem();
 
+        // Inicializar el evento si es nulo
         if (OnMoneyChanged == null)
         {
             OnMoneyChanged = new UnityEvent<int>();
         }
+
+        // Cargar el dinero almacenado en PlayerPrefs
+        currentMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+        OnMoneyChanged.Invoke(currentMoney); // Notificar el cambio inicial
     }
 
     private void RequestItem()
@@ -68,7 +73,9 @@ public class CustomerBehavior : MonoBehaviour
                 Debug.Log("¡Objeto correcto recibido!");
                 isSatisfied = true;
 
+                // Incrementar dinero y guardar en PlayerPrefs
                 currentMoney += 25;
+                PlayerPrefs.SetInt("PlayerMoney", currentMoney);
                 Debug.Log("Dinero actual: " + currentMoney);
 
                 // Mover el objeto al punto de recepción del cliente
@@ -90,13 +97,17 @@ public class CustomerBehavior : MonoBehaviour
             else
             {
                 Debug.Log("¡Objeto incorrecto!");
-                currentMoney -= 11; // 11 pesos porque es a lo que sale el qrobus
-                Debug.Log("Dinero actual: " + currentMoney);
 
+                // Reducir dinero y guardar en PlayerPrefs
+                currentMoney -= 11; // 11 pesos porque es a lo que sale el qrobus
+                PlayerPrefs.SetInt("PlayerMoney", currentMoney);
+                Debug.Log("Dinero actual: " + currentMoney);
 
                 other.GetComponent<Collider>().enabled = false;
                 other.GetComponent<DraggableItem>().enabled = false;
             }
+
+            // Notificar cambios en el dinero
             OnMoneyChanged.Invoke(currentMoney);
         }
     }
