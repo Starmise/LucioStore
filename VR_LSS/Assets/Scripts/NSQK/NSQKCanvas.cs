@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class NSQKCanvas : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class NSQKCanvas : MonoBehaviour
     private void Start()
     {
         canvas = GetComponent<Canvas>();
-        //menu = inputActions.FindActionMap("XRI LeftHand").FindAction("Menu");
-        //menu.Enable();
-        //menu.performed += OpenMenu;
+        menu = inputActions.FindActionMap("XRI LeftHand").FindAction("Menu");
+        menu.Enable();
+        menu.performed += OpenMenu;
     }
 
     private void OnDestroy()
@@ -27,5 +28,10 @@ public class NSQKCanvas : MonoBehaviour
     public void OpenMenu(InputAction.CallbackContext context)
     {
         canvas.enabled = !canvas.enabled;
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("NSQK game");
     }
 }

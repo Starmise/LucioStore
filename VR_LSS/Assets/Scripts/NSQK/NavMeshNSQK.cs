@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,11 +7,20 @@ public class NavMeshNSQK : MonoBehaviour
     private NavMeshAgent agent;
     void Start()
     {
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
+
         agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        agent.destination = player.position;
+        if (player != null)
+        {
+            agent.destination = player.position;
+        }
     }
 }
